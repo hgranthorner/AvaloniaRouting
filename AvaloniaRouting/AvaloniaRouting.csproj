@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="Models\" />
+        <Compile Update="**\*.xaml.cs">
+            <DependentUpon>%(Filename)</DependentUpon>
+        </Compile>
+        <AvaloniaResource Include="**\*.xaml">
+            <SubType>Designer</SubType>
+        </AvaloniaResource>
+        <AvaloniaResource Include="Assets\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.9.12" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
+        <PackageReference Include="Serilog" Version="2.10.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Parse\Parse.csproj" />
+    </ItemGroup>
+</Project>
